@@ -120,6 +120,24 @@ plant/
 ├── requirements.txt        # Python dependencies
 └── README.md              # This file
 ```
+📂 How to Use Your Own Dataset
+This project allows anyone to train the model with their own images.
+Just follow the steps:
+🚀 1. Add Your Dataset
+Place your dataset inside: plant/data/train/
+2.Auto-Generation of Labels & Model
+When you run the training file, the project will automatically create:
+✔ traindisease.txt
+Contains all class names detected from the folder structure.
+No need to manually edit anything.
+✔ models/ Folder
+The trained deep learning model is saved here automatically.
+No need to upload your own model
+3. Train the Model
+Run: python train.py
+4. Predict Crop Disease
+Once the model is trained, run:
+python predict_crop.py --image your_image.jpg
 
 ## 🔧 Configuration
 
@@ -193,4 +211,5 @@ For issues or questions, please check the troubleshooting section or create an i
 ---
 
 **Happy Plant Disease Detection! 🌿🔍**
+
 
