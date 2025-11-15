@@ -1,0 +1,112 @@
+PLANT DISEASE CLASSIFICATION PROJECT - INSTRUCTIONS
+====================================================
+
+PROJECT OVERVIEW
+----------------
+This project is a deep learning-based system for classifying plant diseases from leaf images.
+It supports multiple crops (Corn, Potato, Rice, Sugarcane, Wheat) and provides an interactive
+web interface using Streamlit.
+
+SUPPORTED CROPS AND DISEASES
+----------------------------
+- Corn: Common Rust, Gray Leaf Spot, Northern Leaf Blight, Healthy
+- Potato: Early Blight, Late Blight, Healthy
+- Rice: Brown Spot, Leaf Blast, Neck Blast, Healthy
+- Sugarcane: Bacterial Blight, Red Rot, Healthy
+- Wheat: Brown Rust, Yellow Rust, Healthy
+
+INSTALLATION
+------------
+1. Install Python 3.8 or higher
+2. Install dependencies:
+   pip install -r requirements.txt
+
+SETUP AND TRAINING
+------------------
+1. Reorganize Dataset (if needed):
+   python reorganize_for_disease_training.py
+   
+   This creates a flat structure: data/train_diseases/{crop}_{disease}/
+
+2. Train the Model:
+   python train_disease_model.py
+   
+   This will:
+   - Load images from data/train_diseases/ (or data/train/ as fallback)
+   - Train a MobileNetV2-based model
+   - Save the model to models/disease_classifier.keras
+   - Save label mappings to models/ directory
+
+   Training Time: 30 minutes to several hours (depending on hardware)
+
+3. Verify Model:
+   python test_prediction.py
+
+RUNNING THE WEB APP
+-------------------
+Launch the Streamlit web application:
+   streamlit run app.py
+
+The app will open in your default web browser at http://localhost:8501
+
+USING THE WEB APP
+-----------------
+1. Upload Image: Click "Browse files" and select a plant leaf image
+2. Predict: Click the "Predict Disease" button
+3. View Results: See the predicted crop, disease name, confidence score, and recommended remedy
+4. Explore: View alternative predictions in the expandable sections
+
+PROJECT STRUCTURE
+-----------------
+plant/
+├── data/
+│   ├── train/              # Original dataset (crop/disease structure)
+│   └── train_diseases/     # Reorganized dataset (disease-level)
+├── models/                 # Trained models and label mappings
+│   ├── disease_classifier.keras
+│   ├── disease_label_map.joblib
+│   └── disease_reverse_label_map.joblib
+├── app.py                  # Streamlit web application
+├── predict_disease.py      # Prediction module
+├── train_disease_model.py  # Model training script
+├── reorganize_for_disease_training.py  # Dataset reorganization script
+├── remedies.json           # Disease remedies and treatments
+├── requirements.txt        # Python dependencies
+└── README.md              # Project documentation
+
+CONFIGURATION
+-------------
+Model Parameters (train_disease_model.py):
+- IMG_SIZE: Image input size (default: 224x224)
+- BATCH_SIZE: Training batch size (default: 32)
+- EPOCHS: Number of training epochs (default: 10)
+
+Prediction Parameters (predict_disease.py):
+- top_k: Number of top predictions to return (default: 3)
+
+TROUBLESHOOTING
+---------------
+Model Not Found Error:
+- Ensure you've run the training script first
+- Check that models/disease_classifier.keras exists
+- Verify the model directory path in predict_disease.py
+
+Incorrect Predictions:
+- Ensure the model was trained on the reorganized dataset
+- Check that the label mappings match your dataset structure
+- Verify that images are preprocessed correctly (224x224, RGB)
+
+MODEL PERFORMANCE
+-----------------
+- Architecture: MobileNetV2 (transfer learning)
+- Input Size: 224x224 RGB images
+- Classes: 17 disease classes
+- Augmentation: Rotation, shifts, zoom, flipping, brightness adjustment
+
+NOTES
+-----
+- Model files are saved in the models/ directory (ignored by git)
+- Training data should be in data/train_diseases/ or data/train/
+- The web app requires the trained model to be present in models/
+- Images should be clear, well-lit, and focused on the leaf area
+

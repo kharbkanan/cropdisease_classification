@@ -1,0 +1,23 @@
+{
+  "corn_common_rust": "Use fungicides like azoxystrobin or propiconazole. Rotate crops and plant rust-resistant varieties. Apply treatments early in the season when symptoms first appear.",
+  "corn_gray_leaf_spot": "Apply foliar fungicides early and use crop rotation. Avoid continuous corn planting. Remove and destroy infected plant debris after harvest.",
+  "corn_healthy": "Your corn plant is healthy! Maintain good irrigation and nutrient balance. Continue regular monitoring for early detection of diseases.",
+  "corn_northern_leaf_blight": "Use resistant hybrids and apply fungicides during early infection stages. Practice crop rotation and remove infected debris.",
+  
+  "potato_early_blight": "Remove affected leaves and apply mancozeb or chlorothalonil fungicides. Ensure good soil drainage and avoid overhead watering. Rotate crops regularly.",
+  "potato_healthy": "Potato plant is healthy. Maintain regular monitoring and balanced fertilization. Keep fields weed-free and ensure proper spacing.",
+  "potato_late_blight": "Destroy infected plants immediately. Apply metalaxyl or copper-based fungicides. Improve air circulation and avoid waterlogged soil. Use certified seed potatoes.",
+  
+  "rice_brown_spot": "Use potassium-rich fertilizers. Apply tricyclazole or propiconazole fungicide. Maintain proper water management and avoid excessive nitrogen.",
+  "rice_healthy": "Rice crop is healthy! Maintain proper spacing and nitrogen balance. Continue monitoring for pests and diseases.",
+  "rice_leaf_blast": "Spray tricyclazole during early infection. Use resistant varieties. Maintain proper water levels and avoid excessive nitrogen fertilization.",
+  "rice_neck_blast": "Apply fungicides like carbendazim and manage nitrogen usage. Use resistant varieties and practice crop rotation. Remove infected plant debris.",
+  
+  "sugarcane_bacterial_blight": "Use disease-free setts and apply copper-based bactericides. Avoid waterlogging and ensure good drainage. Practice crop rotation and remove infected plants.",
+  "sugarcane_healthy": "Sugarcane crop is healthy. Maintain optimal irrigation and pest control. Monitor regularly for signs of disease.",
+  "sugarcane_red_rot": "Use resistant varieties and treat seed sets with carbendazim before planting. Avoid waterlogging and ensure proper field drainage. Remove and destroy infected stalks.",
+  
+  "wheat_brown_rust": "Use resistant wheat varieties and apply fungicides like propiconazole or tebuconazole. Remove volunteer wheat plants and practice crop rotation.",
+  "wheat_healthy": "Wheat crop is healthy! Continue regular monitoring for pests and diseases. Maintain proper fertilization and irrigation.",
+  "wheat_yellow_rust": "Apply fungicides (tebuconazole or propiconazole) and use rust-resistant varieties. Remove volunteer wheat and practice crop rotation. Monitor fields regularly during growing season."
+}
